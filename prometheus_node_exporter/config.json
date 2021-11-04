@@ -3,26 +3,25 @@
   "version": "dev",
   "slug": "prometheus_node_exporter",
   "description": "Prometheus node exporter for hardware and OS metrics",
-  "url": "https://github.com",
+  "url": "https://github.com/loganmarchione/hassos-addons/tree/main/prometheus_node_exporter",
   "arch": ["amd64"],
   "startup": "services",
-  "ingress": true,
-  "ingress_port": 9100,
   "boot": "auto",
+  "init":false,
   "options": {},
   "schema": {},
+  "ingress": true,
+  "ingress_port": 9100,
   "ports": {
     "9100/tcp": 9100
   },
   "ports_description": {
-    "9100/tcp": "Default HTTP port"
+    "9100/tcp": "Default node exporter port"
   },
-  "webui":"http://[HOST]:[PORT:9100]/metrics",
-  "watchdog": "http://[HOST]:[PORT:9100]/metrics",
   "hassio_api": true,
   "homeassistant_api": true,
-  "auth_api": false,
-  "docker_api": false,
+  "auth_api": true,
+  "docker_api": true,
   "host_network": true,
   "host_pid": true,
   "apparmor": false
