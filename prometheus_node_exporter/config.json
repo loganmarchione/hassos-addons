@@ -1,0 +1,28 @@
+{
+  "name": "Prometheus Node Exporter",
+  "version": "dev",
+  "slug": "prometheus_node_exporter",
+  "description": "Prometheus node exporter for hardware and OS metrics",
+  "url": "https://github.com",
+  "arch": ["amd64"],
+  "startup": "services",
+  "ingress": true,
+  "ingress_port": 9100,
+  "boot": "auto",
+  "options": {},
+  "schema": {},
+  "ports": {
+    "9100/tcp": 9100
+  },
+  "ports_description": {
+    "9100/tcp": "Default HTTP port"
+  },
+  "webui":"http://[HOST]:[PORT:9100]/metrics",
+  "watchdog": "http://[HOST]:[PORT:9100]/metrics",
+  "hassio_api": true,
+  "auth_api": true,
+  "docker_api": true,
+  "host_network": true,
+  "host_pid": true,
+  "apparmor": false
+}
