@@ -20,6 +20,7 @@
   "webui":"http://[HOST]:[PORT:9100]/metrics",
   "watchdog": "http://[HOST]:[PORT:9100]/metrics",
   "hassio_api": true,
+  "homeassistant_api": true,
   "auth_api": true,
   "docker_api": true,
   "host_network": true,
