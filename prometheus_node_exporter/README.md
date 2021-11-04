@@ -18,6 +18,19 @@ curl -X GET http://your_home_assistant_ip_address:9100/metrics \
 
 ## Usage
 
+Add the following to your `/etc/prometheus/prometheus.yml` config file on your Prometheus server:  
+```
+scrape_configs:
+  ...
+  ...
+  ...
+  - job_name: 'homeassistant'
+    static_configs:
+    - targets: ['your_home_assistant_ip_address:9100']
+```
+
+The following Prometheus query should return data:  
+    node_uname_info{job="homeassistant"}
 
 ## Support
 
