@@ -1,2 +1,2 @@
 # hassos-addons
-Home Assistant Add-ons
+Logan Marchione Home Assistant Add-Ons
