@@ -37,4 +37,5 @@ The following Prometheus query should return data:
 ## License
 
 ## Known issues
-[ ] 
+
+- [ ] The "Show in sidebar" option takes you to the wrong URL
