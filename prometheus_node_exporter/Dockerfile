@@ -21,7 +21,7 @@ RUN \
     && tar -xvf /tmp/node_exporter.tar.gz \
     && cp node_exporter-${NODE_EXPORTER_VERSION}.linux-${ARCH}/node_exporter /usr/local/bin/ \
     && adduser -s /bin/false -D -H prometheus \
-    && chown -R prometheus:prometheus /usr/local/bin/node_exporter
+    && chown -R prometheus:prometheus /usr/local/bin/node_exporter \
     && rm -f -r /tmp/*
 
 # Build arguments
