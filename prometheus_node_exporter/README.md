@@ -8,26 +8,23 @@ The Prometheus [Node Exporter](https://github.com/prometheus/node_exporter) for 
 1. Disable "Protection mode" in the add-on panel.
 1. Start the add-on.
 1. Check the logs of the add-on to see if everything went well.
-1. To verify the metrics are available, use curl.  
-```
-curl -X GET http://your_home_assistant_ip_address:9100/metrics \
-  -H 'Authorization: Bearer your_access_token_goes_here'
-```
+1. To verify the metrics are available, use curl.
+
+`curl -X GET http://your_home_assistant_ip_address:9100/metrics -H 'Authorization: Bearer your_access_token_goes_here'`
 
 ## Configuration
 
 ## Usage
 
-Add the following to your `/etc/prometheus/prometheus.yml` config file on your Prometheus server:  
-```
-scrape_configs:
-  ...
-  ...
-  ...
-  - job_name: 'homeassistant'
-    static_configs:
-    - targets: ['your_home_assistant_ip_address:9100']
-```
+Add the following to your `/etc/prometheus/prometheus.yml` config file on your Prometheus server:
+
+    scrape_configs:
+      ...
+      ...
+      ...
+      - job_name: 'homeassistant'
+        static_configs:
+        - targets: ['your_home_assistant_ip_address:9100']
 
 The following Prometheus query should return data:
 
