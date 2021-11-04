@@ -1,0 +1,4 @@
+# https://developers.home-assistant.io/docs/add-ons/repository#repository-configuration
+name: Logan Marchione Home Assistant Add-Ons
+url: 'https://github.com/loganmarchione/hassos-addons'
+maintainer: Logan Marchione
