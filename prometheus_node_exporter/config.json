@@ -24,6 +24,6 @@
   "auth_api": false,
   "docker_api": false,
   "host_network": true,
-  "host_pid": false,
+  "host_pid": true,
   "apparmor": false
 }
