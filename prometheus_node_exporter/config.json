@@ -21,9 +21,9 @@
   "watchdog": "http://[HOST]:[PORT:9100]/metrics",
   "hassio_api": true,
   "homeassistant_api": true,
-  "auth_api": true,
-  "docker_api": true,
+  "auth_api": false,
+  "docker_api": false,
   "host_network": true,
-  "host_pid": true,
+  "host_pid": false,
   "apparmor": false
 }
