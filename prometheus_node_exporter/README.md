@@ -29,7 +29,8 @@ scrape_configs:
     - targets: ['your_home_assistant_ip_address:9100']
 ```
 
-The following Prometheus query should return data:  
+The following Prometheus query should return data:
+
     node_uname_info{job="homeassistant"}
 
 ## Support
