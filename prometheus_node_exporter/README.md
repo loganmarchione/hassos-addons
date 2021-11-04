@@ -12,9 +12,11 @@ The Prometheus [Node Exporter](https://github.com/prometheus/node_exporter) for 
 
 ## Configuration
 
+N/A
+
 ## Usage
 
-Add the following to your `/etc/prometheus/prometheus.yml` config file on your Prometheus server:
+Add the following to the `/etc/prometheus/prometheus.yml` config file on your Prometheus server:
 
     scrape_configs:
       ...
@@ -33,3 +35,6 @@ The following Prometheus query should return data:
 ## Authors & contributors
 
 ## License
+
+## Known issues
+[ ] 
