@@ -4,7 +4,14 @@
 # Home Assistant Community Add-on: Prometheus Node Exporter
 # Runs the Prometheus Node Exporter
 # ==============================================================================
+declare -a options
+declare ingress_port
+
 bashio::log.info 'Starting prometheus node exporter...'
 
+# Get assigned Ingress port
+ingress_port=$(bashio::addon.ingress_port)
+options+=(--web.listen-address='':"${ingress_port}"')
+
 # Run Prometheus
-exec s6-setuidgid prometheus /usr/local/bin/node_exporter
+exec s6-setuidgid prometheus /usr/local/bin/node_exporter "${options[@]}"
