@@ -38,4 +38,4 @@ The following Prometheus query should return data:
 
 ## Known issues
 
-- [ ] The "Show in sidebar" option takes you to the wrong URL
+- [ ] The "Open Web UI" button doesn't work when Home Assistant is behind a reverse proxy
