@@ -10,13 +10,12 @@
   "init":false,
   "options": {},
   "schema": {},
-  "ingress": true,
-  "ingress_port": 9100,
+  "webui": "http://[HOST]:[PORT:9100]",
   "ports": {
     "9100/tcp": 9100
   },
   "ports_description": {
-    "9100/tcp": "Default node exporter port"
+    "9100/tcp": "Default node exporter port and web interface"
   },
   "hassio_api": true,
   "homeassistant_api": true,
