@@ -33,7 +33,7 @@ The following Prometheus query should return data:
 
 ## Support
 
-WIP
+- Tested on `amd64` and `aarch64` (Raspberry Pi 4B) platforms
 
 ## Authors & contributors
 
@@ -46,7 +46,7 @@ WIP
 ## Known issues
 
 - [ ] The "Open Web UI" button doesn't work when Home Assistant is behind a reverse proxy.
-- [ ] Only tested on `amd64` builds.
+- [X] Only tested on `amd64` builds.
 
 ## FAQ
 
