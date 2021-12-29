@@ -1,5 +1,8 @@
 # Changelog
 
+## [0.0.4] - 2021-12-29
+- Update Node Exporter to 1.3.1
+
 ## [0.0.3] - 2021-12-12
 - Built for `armv7` (Raspberry Pi 3B) thanks to [@jaredacox](https://github.com/jaredacox)
 
