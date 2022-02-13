@@ -48,6 +48,11 @@ WIP
 - [ ] The "Open Web UI" button doesn't work when Home Assistant is behind a reverse proxy.
 - [X] Only tested on `amd64` builds.
 
+## TODO
+
+- [ ] Add HTTP Basic Auth
+- [ ] Add TLS
+
 ## FAQ
 
 - Doesn't Home Assistant already have Prometheus integration?
