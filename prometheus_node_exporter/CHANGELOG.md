@@ -1,5 +1,8 @@
 # Changelog
 
+## [0.0.5] - 2022-02-13
+- Added HTTP Basic Auth
+
 ## [0.0.4] - 2021-12-29
 - Update Node Exporter to 1.3.1
 

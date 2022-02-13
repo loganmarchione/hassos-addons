@@ -1,10 +1,9 @@
 #!/usr/bin/with-contenv bashio
-# shellcheck disable=SC2191
 # ==============================================================================
 # Home Assistant Community Add-on: Prometheus Node Exporter
 # Runs the Prometheus Node Exporter
 # ==============================================================================
-bashio::log.info 'Starting prometheus node exporter...'
+bashio::log.info "Starting prometheus node exporter..."
 
 # Run Prometheus
-exec s6-setuidgid prometheus /usr/local/bin/node_exporter
+exec s6-setuidgid prometheus /usr/local/bin/node_exporter --web.config=/etc/prometheus_node_exporter_web.yml
