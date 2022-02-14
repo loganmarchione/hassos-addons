@@ -7,8 +7,8 @@ The Prometheus [Node Exporter](https://github.com/prometheus/node_exporter) for 
 1. Add my [repository](https://github.com/loganmarchione/hassos-addons). The URL is `https://github.com/loganmarchione/hassos-addons`.
 2. Search for the "Prometheus Node Exporter" add-on in the Supervisor add-on store and install it.
 3. Disable "Protection mode" in the add-on panel.
-4. Start the add-on.
-5. Optional - Check the `Configuration` tab
+4. Optional - Check the `Configuration` tab.
+5. Start the add-on.
 6. Check the logs of the add-on to see if everything went well.
 7. To verify the metrics are available, visit `http://your_home_assistant_ip_address:9100/metrics` in your browser, or use curl `curl -X GET http://your_home_assistant_ip_address:9100/metrics`.
 
