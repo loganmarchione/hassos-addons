@@ -7,7 +7,7 @@
   "arch": ["amd64","aarch64","armv7"],
   "startup": "services",
   "boot": "auto",
-  "init":false,
+  "init": false,
   "options": {},
   "schema": {},
   "webui": "http://[HOST]:[PORT:9100]",
