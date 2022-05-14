@@ -1,6 +1,6 @@
 {
   "name": "Prometheus Node Exporter",
-  "version": "dev",
+  "version": "0.0.6",
   "slug": "prometheus_node_exporter",
   "description": "Prometheus node exporter for hardware and OS metrics",
   "url": "https://github.com/loganmarchione/hassos-addons/tree/main/prometheus_node_exporter",
@@ -8,8 +8,6 @@
   "startup": "services",
   "boot": "auto",
   "init": false,
-  "options": {},
-  "schema": {},
   "webui": "http://[HOST]:[PORT:9100]",
   "ports": {
     "9100/tcp": 9100
@@ -25,13 +23,13 @@
   "host_pid": true,
   "apparmor": false,
   "options": {
-	"enable_basic_auth": false,
+	  "enable_basic_auth": false,
     "basic_auth_user": "prom",
-	"basic_auth_pass": "$2a$12$Azy3nrjebl.U17DLmpX57.cUUKzm/PX5thtAkf7xl/hUHSJrm4VkS"
+	  "basic_auth_pass": "$2a$12$Azy3nrjebl.U17DLmpX57.cUUKzm/PX5thtAkf7xl/hUHSJrm4VkS"
   },
   "schema": {
-	"enable_basic_auth": "bool",
+	  "enable_basic_auth": "bool",
     "basic_auth_user": "str",
-	"basic_auth_pass": "str"
+	  "basic_auth_pass": "str"
   }
 }
