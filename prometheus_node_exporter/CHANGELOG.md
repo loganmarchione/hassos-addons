@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.0.6] - 2022-05-17
+- Fix S6-overlay v3 problems
+- Add build.json file to better control base image versions
+- Small formatting fixes and readability changes
+
 ## [0.0.5] - 2022-02-13
 - Added HTTP Basic Auth
 

@@ -1,0 +1,10 @@
+{
+  "build_from": {
+    "amd64": "ghcr.io/hassio-addons/base/amd64:11.1.0",
+    "aarch64": "ghcr.io/hassio-addons/base/aarch64:11.1.0",
+    "armv7": "ghcr.io/hassio-addons/base/armv7:11.1.0"
+  },
+  "args": {
+    "NODE_EXPORTER_VERSION": "1.3.1"
+  }
+}

@@ -5,8 +5,9 @@ FROM $BUILD_FROM
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Setup base system
-ARG BUILD_ARCH=amd64
-ENV NODE_EXPORTER_VERSION=1.3.1
+ARG \
+  BUILD_ARCH \
+  NODE_EXPORTER_VERSION
 
 # Copy root filesystem
 COPY rootfs /
@@ -22,8 +23,3 @@ RUN \
     && adduser -s /bin/false -D -H prometheus \
     && chown -R prometheus:prometheus /usr/local/bin/node_exporter \
     && rm -f -r /tmp/*
-
-# Build arguments
-ARG BUILD_DATE
-ARG BUILD_REF
-ARG BUILD_VERSION
