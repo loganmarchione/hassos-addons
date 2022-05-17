@@ -64,6 +64,8 @@ WIP
 - [X] Add HTTP Basic Auth
 - [ ] Add abilty to enter plain-text password instead of bcyrpt-ed hash
 - [ ] Add TLS
+- [ ] Per [this comment](https://community.home-assistant.io/t/hello-world-example-addon-from-developer-docs-stopped-working-s6-overlay-issue/421486/7), setup container images on a registry (DockerHub or GitHub) so that users aren't building the container with each install (would have prevented [this issue](https://github.com/loganmarchione/hassos-addons/issues/2))
+- [ ] Investigate CI/CD for this repo, specifically [this](https://github.com/home-assistant/actions) and [this](https://github.com/hassio-addons/addon-glances/blob/main/.github/workflows/ci.yaml) as an example
 
 ## FAQ
 
