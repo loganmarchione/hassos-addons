@@ -1,5 +1,8 @@
 # Changelog
 
+## [0.0.7] - 2022-06-07
+- Upgrade base image from `ghcr.io/hassio-addons/base/<arch>:11.1.0` to `11.1.2` (this is the latest and last without s6 v3)
+
 ## [0.0.6] - 2022-05-17
 - Fix S6-overlay v3 problems
 - Add build.json file to better control base image versions
