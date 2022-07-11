@@ -1,4 +1,4 @@
-#!/usr/bin/with-contenv bashio
+#!/usr/bin/env bashio
 # ==============================================================================
 # Home Assistant Community Add-on: Prometheus Node Exporter
 # Configures Prometheus Node Exporter
@@ -8,7 +8,7 @@ echo "${SUPERVISOR_TOKEN}" > '/run/home-assistant.token'
 
 # Even if the user isn't using these options, we're creating the web config file
 # This will allow us to append to the web config file as needed (based on variables)
-# Node_exporter will run with a blank web config file in the meantime
+# Prometheus Node Exporter will run with a blank web config file in the meantime
 
 web_config_dir=/etc/prometheus_node_exporter
 mkdir $web_config_dir
