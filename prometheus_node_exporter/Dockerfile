@@ -1,4 +1,5 @@
 ARG BUILD_FROM
+# hadolint ignore=DL3006
 FROM $BUILD_FROM
 
 # Set shell
@@ -17,9 +18,8 @@ RUN \
     && if [ "${BUILD_ARCH}" = "aarch64" ]; then ARCH="arm64"; fi \
     && curl -J -L -o /tmp/node_exporter.tar.gz \
        "https://github.com/prometheus/node_exporter/releases/download/v${NODE_EXPORTER_VERSION}/node_exporter-${NODE_EXPORTER_VERSION}.linux-${ARCH}.tar.gz" \
-    && cd /tmp \
     && tar -xvf /tmp/node_exporter.tar.gz \
-    && cp node_exporter-${NODE_EXPORTER_VERSION}.linux-${ARCH}/node_exporter /usr/local/bin/ \
+    && cp /tmp/node_exporter-${NODE_EXPORTER_VERSION}.linux-${ARCH}/node_exporter /usr/local/bin/ \
     && adduser -s /bin/false -D -H prometheus \
     && chown -R prometheus:prometheus /usr/local/bin/node_exporter \
     && rm -f -r /tmp/*
