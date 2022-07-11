@@ -21,7 +21,6 @@ RUN \
     && curl -vvv -J -L -o /tmp/node_exporter.tar.gz \
        "https://github.com/prometheus/node_exporter/releases/download/v${NODE_EXPORTER_VERSION}/node_exporter-${NODE_EXPORTER_VERSION}.linux-${ARCH}.tar.gz" \
     && cd /tmp \
-    && ls -la \
     && tar -xzvf node_exporter.tar.gz  \
     && mv "node_exporter-${NODE_EXPORTER_VERSION}.linux-${ARCH}/node_exporter" /usr/local/bin/ \
     && adduser -s /bin/false -D -H prometheus \
