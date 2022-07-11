@@ -20,12 +20,11 @@ RUN \
     && curl -J -L -o /tmp/node_exporter.tar.gz \
        "https://github.com/prometheus/node_exporter/releases/download/v${NODE_EXPORTER_VERSION}/node_exporter-${NODE_EXPORTER_VERSION}.linux-${ARCH}.tar.gz" \
     && cd /tmp \
-    && tar -xvf /tmp/node_exporter.tar.gz \
-    && cp node_exporter-${NODE_EXPORTER_VERSION}.linux-${ARCH}/node_exporter /usr/local/bin/ \
+    && tar -xzvf node_exporter.tar.gz  \
+    && mv node_exporter-${NODE_EXPORTER_VERSION}.linux-${ARCH}/node_exporter /usr/local/bin/ \
     && adduser -s /bin/false -D -H prometheus \
     && chown -R prometheus:prometheus /usr/local/bin/node_exporter \
-    && rm -rf /tmp/node_exporter.tar.gz \
-    && rm -rf /tmp/node_exporter-${NODE_EXPORTER_VERSION}.linux-${ARCH}
+    && rm -rf /tmp/node_exporter*
 
 # This add-on runs on the host pid namespace, making it impossible
 # to use S6-Overlay. Therefore the init system is disabled at this point.
