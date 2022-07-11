@@ -1,5 +1,7 @@
 # prometheus_node_exporter
 
+[![CI](https://github.com/loganmarchione/hassos-addons/actions/workflows/ci.yaml/badge.svg)](https://github.com/loganmarchione/hassos-addons/actions/workflows/ci.yaml)
+
 The Prometheus [Node Exporter](https://github.com/prometheus/node_exporter) for hardware and OS metrics exposed by \*NIX kernels.
 
 ## Installation
