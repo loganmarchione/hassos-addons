@@ -18,7 +18,7 @@ RUN \
     apk add --no-cache --update tar \
     && ARCH="${BUILD_ARCH}" \
     && if [ "${BUILD_ARCH}" = "aarch64" ]; then ARCH="arm64"; fi \
-    && curl -J -L -o /tmp/node_exporter.tar.gz \
+    && curl -vvv -J -L -o /tmp/node_exporter.tar.gz \
        "https://github.com/prometheus/node_exporter/releases/download/v${NODE_EXPORTER_VERSION}/node_exporter-${NODE_EXPORTER_VERSION}.linux-${ARCH}.tar.gz" \
     && cd /tmp \
     && ls -la \
