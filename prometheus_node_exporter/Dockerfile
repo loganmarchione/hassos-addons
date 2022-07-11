@@ -23,3 +23,8 @@ RUN \
     && adduser -s /bin/false -D -H prometheus \
     && chown -R prometheus:prometheus /usr/local/bin/node_exporter \
     && rm -f -r /tmp/*
+
+# This add-on runs on the host pid namespace, making it impossible
+# to use S6-Overlay. Therefore the init system is disabled at this point.
+ENTRYPOINT []
+CMD ["/run.sh"]

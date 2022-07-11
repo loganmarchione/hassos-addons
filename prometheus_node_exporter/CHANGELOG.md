@@ -1,5 +1,8 @@
 # Changelog
 
+## [0.1.0] - 2022-07-11
+- Upgrade base image from `ghcr.io/hassio-addons/base/<arch>:11.1.2` to `12.2.0` (Alpine Linux 3.16), but also disable the s6 init system because of [this issue](https://github.com/home-assistant/supervisor/issues/3642)
+
 ## [0.0.7] - 2022-06-07
 - Upgrade base image from `ghcr.io/hassio-addons/base/<arch>:11.1.0` to `11.1.2` (this is the latest and last without s6 v3)
 
