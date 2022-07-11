@@ -1,6 +1,6 @@
 # prometheus_node_exporter
 
-The Prometheus [Node Exporter](https://github.com/prometheus/node_exporter) for hardware and OS metrics exposed by *NIX kernels.
+The Prometheus [Node Exporter](https://github.com/prometheus/node_exporter) for hardware and OS metrics exposed by \*NIX kernels.
 
 ## Installation
 
@@ -17,10 +17,11 @@ The Prometheus [Node Exporter](https://github.com/prometheus/node_exporter) for 
 By default, Prometheus Node Exporter listens on TCP port 9100.
 
 ### HTTP Basic Authentication
+
 [HTTP Basic Auth](https://en.wikipedia.org/wiki/Basic_access_authentication) is disabled by default.  
 If you want to enable HTTP Basic Auth, set `enable_basic_auth` to true, then enter the `basic_auth_user` and `basic_auth_pass`.  
 ⚠️ Note that the `basic_auth_pass` needs to be a [bcrypt password hash](https://prometheus.io/docs/guides/basic-auth/)! ⚠️  
-The default credentials are below ⚠️ PLEASE CHANGE THEM ⚠️:  
+The default credentials are below ⚠️ PLEASE CHANGE THEM ⚠️:
 
     Username            prom
     Password (plain)    prometheus123@
@@ -57,11 +58,11 @@ WIP
 ## Known issues
 
 - [ ] The "Open Web UI" button doesn't work when Home Assistant is behind a reverse proxy.
-- [X] Only tested on `amd64` builds.
+- [x] Only tested on `amd64` builds.
 
 ## TODO
 
-- [X] Add HTTP Basic Auth
+- [x] Add HTTP Basic Auth
 - [ ] Add abilty to enter plain-text password instead of bcyrpt-ed hash
 - [ ] Add TLS
 - [ ] Per [this comment](https://community.home-assistant.io/t/hello-world-example-addon-from-developer-docs-stopped-working-s6-overlay-issue/421486/7), setup container images on a registry (DockerHub or GitHub) so that users aren't building the container with each install (would have prevented [this issue](https://github.com/loganmarchione/hassos-addons/issues/2))
@@ -71,8 +72,8 @@ WIP
 ## FAQ
 
 - Doesn't Home Assistant already have Prometheus integration?
-    - Yes, but the [official integration](https://www.home-assistant.io/integrations/prometheus/) only exposes entity-related metrics, not host-related metrics.
+  - Yes, but the [official integration](https://www.home-assistant.io/integrations/prometheus/) only exposes entity-related metrics, not host-related metrics.
 - Isn't there already an Prometheus add-on?
-    - Yes, but that [add-on](https://github.com/hassio-addons/addon-prometheus) is for Prometheus server, not the node exporter.
+  - Yes, but that [add-on](https://github.com/hassio-addons/addon-prometheus) is for Prometheus server, not the node exporter.
 - Why does this add-on require so many permissions?
-    - The add-on needs to access to host-level metrics (CPU, memory, disk, etc...). As such, I have requested all possible permissions. Please inspect the code of this add-on before you run it.
+  - The add-on needs to access to host-level metrics (CPU, memory, disk, etc...). As such, I have requested all possible permissions. Please inspect the code of this add-on before you run it.
