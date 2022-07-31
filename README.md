@@ -1,9 +1,6 @@
 # hassos-addons
 
-Fork of Logan Marchione Home Assistant Add-Ons
-
-## Fork
-The fork is to implement TLS support.
+Logan Marchione Home Assistant Add-Ons
 
 ## Installation
 
@@ -17,4 +14,4 @@ The fork is to implement TLS support.
 
 1. Open the Supervisor panel in Home Assistant.
 1. Click the menu icon in the top-right, then click "Repositories".
-1. Add this URL `https://github.com/Quedale/hassos-addons.git`
+1. Add this URL `https://github.com/loganmarchione/hassos-addons`
