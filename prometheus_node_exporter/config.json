@@ -22,7 +22,7 @@
   "host_pid": true,
   "apparmor": false,
   "options": {
-    "enable_basic_auth": false,h
+    "enable_basic_auth": false,
     "basic_auth_user": "prom",
     "basic_auth_pass": "$2a$12$Azy3nrjebl.U17DLmpX57.cUUKzm/PX5thtAkf7xl/hUHSJrm4VkS"
   },
