@@ -6,4 +6,4 @@
 bashio::log.info "Starting Prometheus Node Exporter..."
 
 # Run Prometheus
-exec /usr/local/bin/node_exporter --web.config=/etc/prometheus_node_exporter/node_exporter_web.yml
+exec /usr/local/bin/node_exporter --web.config=/config/prometheus_node_exporter/node_exporter_web.yml
