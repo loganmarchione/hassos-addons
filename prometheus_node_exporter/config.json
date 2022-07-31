@@ -14,6 +14,10 @@
   "ports_description": {
     "9100/tcp": "Default node exporter port and web interface"
   },
+  "map": [
+    "config:rw",
+    "ssl"
+  ],
   "hassio_api": true,
   "homeassistant_api": true,
   "auth_api": true,
@@ -22,7 +26,7 @@
   "host_pid": true,
   "apparmor": false,
   "options": {
-    "enable_basic_auth": false,
+    "enable_basic_auth": false,h
     "basic_auth_user": "prom",
     "basic_auth_pass": "$2a$12$Azy3nrjebl.U17DLmpX57.cUUKzm/PX5thtAkf7xl/hUHSJrm4VkS"
   },
