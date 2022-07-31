@@ -12,7 +12,6 @@ echo "${SUPERVISOR_TOKEN}" > '/run/home-assistant.token'
 
 config_dir=/config
 web_config_dir=$config_dir/prometheus_node_exporter
-mkdir $config_dir
 mkdir $web_config_dir
 chmod 750 $web_config_dir
 chown root:prometheus $web_config_dir
@@ -57,7 +56,7 @@ fi
 
 #####
 # TODO Support input config
-####
+#### c
 echo "tls_server_config:" >> $web_config_file
 echo "    cert_file: /ssl/fullchain.pem" >> $web_config_file
 echo "    key_file: /ssl/privkey.pem" >> $web_config_file
