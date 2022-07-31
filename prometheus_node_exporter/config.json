@@ -1,6 +1,6 @@
 {
   "name": "Prometheus Node Exporter",
-  "version": "dev",
+  "version": "dev-b1",
   "slug": "prometheus_node_exporter",
   "description": "Prometheus node exporter for hardware and OS metrics",
   "url": "https://github.com/Quedale/hassos-addons/tree/main/prometheus_node_exporter",
