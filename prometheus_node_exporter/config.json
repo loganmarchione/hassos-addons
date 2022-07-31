@@ -14,10 +14,6 @@
   "ports_description": {
     "9100/tcp": "Default node exporter port and web interface"
   },
-  "map": [
-    "config:rw",
-    "ssl"
-  ],
   "hassio_api": true,
   "homeassistant_api": true,
   "auth_api": true,
