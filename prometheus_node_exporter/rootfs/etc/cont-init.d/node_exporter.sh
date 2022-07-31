@@ -53,10 +53,16 @@ if bashio::config.true 'enable_basic_auth'; then
   # Poor man's debugger: check web config file
   #cat $web_config_file
 fi
+if bashio::config.true 'enable_tls'; then
 
-#####
-# TODO Support input config
-#### c
-echo "tls_server_config:" >> $web_config_file
-echo "    cert_file: /ssl/fullchain.pem" >> $web_config_file
-echo "    key_file: /ssl/privkey.pem" >> $web_config_file
+  # Require variables
+  bashio::config.require 'cert_file' "You enabled TLS, so you must set certificate file"
+  bashio::config.require 'cert_key' "You enabled TLS, so you must set certificate key"
+  cert_file="$(bashio::config 'cert_file')"
+  cert_key="$(bashio::config 'cert_key')"
+  
+  echo "tls_server_config:" >> $web_config_file
+  echo "    cert_file: $cert_file" >> $web_config_file
+  echo "    key_file: $cert_key" >> $web_config_file
+  
+fi
