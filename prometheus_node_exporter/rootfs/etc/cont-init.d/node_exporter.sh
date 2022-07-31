@@ -56,8 +56,8 @@ if bashio::config.true 'enable_basic_auth'; then
 fi
 
 #####
-# TODO Support config
+# TODO Support input config
 ####
 echo "tls_server_config:" >> $web_config_file
-echo "    cert_file: /etc/node_exporter/fullchain.pem" >> $web_config_file
-echo "    key_file: /etc/node_exporter/privkey.pem" >> $web_config_file
+echo "    cert_file: /ssl/fullchain.pem" >> $web_config_file
+echo "    key_file: /ssl/privkey.pem" >> $web_config_file
