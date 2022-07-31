@@ -38,7 +38,7 @@
     "basic_auth_user": "str",
     "basic_auth_pass": "str",
     "enable_tls": "bool",
-    "cert_file": "str".
+    "cert_file": "str",
     "cert_key": "str"
   }
 }
