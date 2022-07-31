@@ -10,12 +10,14 @@ echo "${SUPERVISOR_TOKEN}" > '/run/home-assistant.token'
 # This will allow us to append to the web config file as needed (based on variables)
 # Prometheus Node Exporter will run with a blank web config file in the meantime
 
-web_config_dir=/config/prometheus_node_exporter
+config_dir=/config
+web_config_dir=$config_dir/prometheus_node_exporter
+mkdir $config_dir
 mkdir $web_config_dir
 chmod 750 $web_config_dir
 chown root:prometheus $web_config_dir
 
-web_config_file=/config/prometheus_node_exporter/node_exporter_web.yml
+web_config_file=$web_config_dir/node_exporter_web.yml
 touch $web_config_file
 chmod 740 $web_config_file
 chown root:prometheus $web_config_file
