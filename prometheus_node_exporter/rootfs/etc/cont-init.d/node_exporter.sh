@@ -17,7 +17,7 @@ chmod 750 $web_config_dir
 chown root:prometheus $web_config_dir
 
 web_config_file=$web_config_dir/node_exporter_web.yml
-rm $web_config_file
+rm -f $web_config_file
 touch $web_config_file
 chmod 740 $web_config_file
 chown root:prometheus $web_config_file
