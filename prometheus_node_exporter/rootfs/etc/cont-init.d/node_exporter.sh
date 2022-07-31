@@ -48,12 +48,14 @@ if bashio::config.true 'enable_basic_auth'; then
   # Start echoing lines out to web config file (YAML is space-sensitive so I'm lazily not using a heredoc)
   echo "basic_auth_users:" > $web_config_file
   echo "    $basic_auth_user: $basic_auth_pass" >> $web_config_file
-
+  
   # Poor man's debugger: check web config file
   #cat $web_config_file
 fi
 
-#####################
-# TLS
-# TODO
-#####################
+#####
+# TODO Support config
+####
+echo "tls_server_config:" >> $web_config_file
+echo "    cert_file: /etc/node_exporter/fullchain.pem" >> $web_config_file
+echo "    key_file: /etc/node_exporter/privkey.pem" >> $web_config_file
