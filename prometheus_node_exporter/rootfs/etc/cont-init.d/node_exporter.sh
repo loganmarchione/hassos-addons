@@ -12,7 +12,7 @@ echo "${SUPERVISOR_TOKEN}" > '/run/home-assistant.token'
 
 config_dir=/config
 web_config_dir=$config_dir/prometheus_node_exporter
-mkdir $web_config_dir
+mkdir -p $web_config_dir
 chmod 750 $web_config_dir
 chown root:prometheus $web_config_dir
 
