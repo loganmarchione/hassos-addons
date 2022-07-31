@@ -3,7 +3,7 @@
 Fork of Logan Marchione Home Assistant Add-Ons
 
 ## Fork
-The fork is to attempt to implement TLS support. WIP Doesn't work yet.
+The fork is to implement TLS support.
 
 ## Installation
 
