@@ -1,4 +1,4 @@
 # https://developers.home-assistant.io/docs/add-ons/repository#repository-configuration
 name: Quedale Home Assistant Add-Ons
-url: 'https://github.com/loganmarchione/hassos-addons'
+url: 'https://github.com/Quedale/hassos-addons'
 maintainer: Sebastien Laurier
