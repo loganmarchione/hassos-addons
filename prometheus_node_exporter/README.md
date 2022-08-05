@@ -70,7 +70,9 @@ node_uname_info{job="homeassistant"}
 
 ## Authors & contributors
 
-[Logan Marchione](https://github.com/loganmarchione)
+- [Logan Marchione](https://github.com/loganmarchione)
+- https://github.com/jaredacox
+- https://github.com/Quedale
 
 ## License
 
