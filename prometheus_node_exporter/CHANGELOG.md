@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.2.1] - 2022-08-05
+
+- More logging around TLS
+
 ## [0.2.0] - 2022-08-05
 
 - Add TLS support
