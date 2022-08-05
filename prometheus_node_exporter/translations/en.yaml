@@ -1,0 +1,11 @@
+---
+configuration:
+  enable_basic_auth:
+    name: Enable HTTP basic auth
+    description: Toggle on to enable HTTP basic authentication (i.e., password protection)
+  basic_auth_user:
+    name: Basic auth username
+    description: The basic auth username
+  basic_auth_pass:
+    name: Basic auth password
+    description: The basic auth password (needs to be a bcrypt password hash!)
