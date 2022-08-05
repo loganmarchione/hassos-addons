@@ -55,6 +55,14 @@ if bashio::config.true 'enable_basic_auth'; then
   #cat $web_config_file
 fi
 
+#####################
+# TLS
+#####################
+
+if bashio::config.false 'enable_tls'; then
+  bashio::log.warning "TLS is disabled!"
+fi
+
 if bashio::config.true 'enable_tls'; then
   bashio::log.info "TLS is enabled!"
 
