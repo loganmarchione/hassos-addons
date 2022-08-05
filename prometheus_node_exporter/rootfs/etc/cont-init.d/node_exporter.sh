@@ -50,20 +50,22 @@ if bashio::config.true 'enable_basic_auth'; then
   # Start echoing lines out to web config file (YAML is space-sensitive so I'm lazily not using a heredoc)
   echo "basic_auth_users:" > $web_config_file
   echo "    $basic_auth_user: $basic_auth_pass" >> $web_config_file
-  
+
   # Poor man's debugger: check web config file
   #cat $web_config_file
 fi
+
 if bashio::config.true 'enable_tls'; then
+  bashio::log.info "TLS is enabled!"
 
   # Require variables
   bashio::config.require 'cert_file' "You enabled TLS, so you must set certificate file"
   bashio::config.require 'cert_key' "You enabled TLS, so you must set certificate key"
   cert_file="$(bashio::config 'cert_file')"
   cert_key="$(bashio::config 'cert_key')"
-  
+
   echo "tls_server_config:" >> $web_config_file
   echo "    cert_file: $cert_file" >> $web_config_file
   echo "    key_file: $cert_key" >> $web_config_file
-  
+
 fi
