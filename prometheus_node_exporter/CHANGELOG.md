@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.2.0] - 2022-08-05
+
+- Add TLS support
+- Map Node Exporter config files from `/etc` to `/config`, to allow editing via the [File editor add-on](https://github.com/home-assistant/addons/tree/master/configurator)
+
 ## [0.1.1] - 2022-08-05
 
 - Add configuration option descriptions

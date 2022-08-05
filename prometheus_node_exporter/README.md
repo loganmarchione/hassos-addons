@@ -42,7 +42,7 @@ TLS is disabled by default. If you want to enable TLS:
 1. set `enable_tls` to true
 1. enter the `cert_file` and `cert_key`
 
-⚠️ Note that the `cert_file` and `cert_key` needs to be a `/path/to/fullchain.pem` and `/path/to/privkey.pem`, respectively (`/config` and `/ssl` are mapped to this add-on) ⚠️
+⚠️ Note that the `cert_file` and `cert_key` need to be a `/path/to/fullchain.pem` and `/path/to/privkey.pem`, respectively (`/config` and `/ssl` are mapped to this add-on) ⚠️
 
 ## Usage
 
