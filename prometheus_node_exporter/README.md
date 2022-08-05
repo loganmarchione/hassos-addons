@@ -35,6 +35,15 @@ Password (plain)    prometheus123@
 Password (bcrypt)   $2a$12$Azy3nrjebl.U17DLmpX57.cUUKzm/PX5thtAkf7xl/hUHSJrm4VkS
 ```
 
+### TLS
+
+TLS is disabled by default. If you want to enable TLS:
+
+1. set `enable_tls` to true
+1. enter the `cert_file` and `cert_key`
+
+⚠️ Note that the `cert_file` and `cert_key` needs to be a `/path/to/fullchain.pem` and `/path/to/privkey.pem`, respectively (`/config` and `/ssl` are mapped to this add-on) ⚠️
+
 ## Usage
 
 Add the following to the `/etc/prometheus/prometheus.yml` config file on your Prometheus server:
@@ -76,7 +85,7 @@ WIP
 
 - [x] Add HTTP Basic Auth
 - [ ] Add abilty to enter plain-text password instead of bcyrpt-ed hash
-- [ ] Add TLS
+- [x] Add TLS
 - [ ] Per [this comment](https://community.home-assistant.io/t/hello-world-example-addon-from-developer-docs-stopped-working-s6-overlay-issue/421486/7), setup container images on a registry (DockerHub or GitHub) so that users aren't building the container with each install (would have prevented [this issue](https://github.com/loganmarchione/hassos-addons/issues/2))
 - [x] Investigate CI/CD for this repo, specifically [this](https://github.com/home-assistant/actions) and [this](https://github.com/hassio-addons/addon-glances/blob/main/.github/workflows/ci.yaml) as an example
 - [ ] Investigate dropping API access (e.g., `hassio_api`, `homeassistant_api`, `auth_api`) in order to get my rating up
