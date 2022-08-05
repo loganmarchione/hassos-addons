@@ -7,13 +7,17 @@
   "arch": ["amd64", "aarch64", "armv7"],
   "startup": "services",
   "init": false,
-  "webui": "http://[HOST]:[PORT:9100]",
+  "webui": "[PROTO:enable_tls]://[HOST]:[PORT:9100]",
   "ports": {
     "9100/tcp": 9100
   },
   "ports_description": {
     "9100/tcp": "Default node exporter port and web interface"
   },
+  "map": [
+    "config:rw",
+    "ssl"
+  ],
   "hassio_api": true,
   "homeassistant_api": true,
   "auth_api": true,
@@ -24,11 +28,17 @@
   "options": {
     "enable_basic_auth": false,
     "basic_auth_user": "prom",
-    "basic_auth_pass": "$2a$12$Azy3nrjebl.U17DLmpX57.cUUKzm/PX5thtAkf7xl/hUHSJrm4VkS"
+    "basic_auth_pass": "$2a$12$Azy3nrjebl.U17DLmpX57.cUUKzm/PX5thtAkf7xl/hUHSJrm4VkS",
+    "enable_tls": false,
+    "cert_file": "/ssl/fullchain.pem",
+    "cert_key": "/ssl/privkey.pem"
   },
   "schema": {
     "enable_basic_auth": "bool",
     "basic_auth_user": "str",
-    "basic_auth_pass": "str"
+    "basic_auth_pass": "str",
+    "enable_tls": "bool",
+    "cert_file": "str",
+    "cert_key": "str"
   }
 }

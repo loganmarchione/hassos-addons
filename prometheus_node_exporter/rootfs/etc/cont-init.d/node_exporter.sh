@@ -10,12 +10,14 @@ echo "${SUPERVISOR_TOKEN}" > '/run/home-assistant.token'
 # This will allow us to append to the web config file as needed (based on variables)
 # Prometheus Node Exporter will run with a blank web config file in the meantime
 
-web_config_dir=/etc/prometheus_node_exporter
-mkdir $web_config_dir
+config_dir=/config
+web_config_dir=$config_dir/prometheus_node_exporter
+mkdir -p $web_config_dir
 chmod 750 $web_config_dir
 chown root:prometheus $web_config_dir
 
-web_config_file=/etc/prometheus_node_exporter/node_exporter_web.yml
+web_config_file=$web_config_dir/node_exporter_web.yml
+rm -f $web_config_file
 touch $web_config_file
 chmod 740 $web_config_file
 chown root:prometheus $web_config_file
@@ -48,12 +50,20 @@ if bashio::config.true 'enable_basic_auth'; then
   # Start echoing lines out to web config file (YAML is space-sensitive so I'm lazily not using a heredoc)
   echo "basic_auth_users:" > $web_config_file
   echo "    $basic_auth_user: $basic_auth_pass" >> $web_config_file
-
+  
   # Poor man's debugger: check web config file
   #cat $web_config_file
 fi
+if bashio::config.true 'enable_tls'; then
 
-#####################
-# TLS
-# TODO
-#####################
+  # Require variables
+  bashio::config.require 'cert_file' "You enabled TLS, so you must set certificate file"
+  bashio::config.require 'cert_key' "You enabled TLS, so you must set certificate key"
+  cert_file="$(bashio::config 'cert_file')"
+  cert_key="$(bashio::config 'cert_key')"
+  
+  echo "tls_server_config:" >> $web_config_file
+  echo "    cert_file: $cert_file" >> $web_config_file
+  echo "    key_file: $cert_key" >> $web_config_file
+  
+fi
