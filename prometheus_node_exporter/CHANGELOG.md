@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.3.0] - 2022-09-26
+
+- Update Node Exporter to 1.4.0
+
 ## [0.2.1] - 2022-08-05
 
 - More logging around TLS
