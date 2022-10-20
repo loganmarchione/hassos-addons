@@ -5,5 +5,17 @@
   ],
   "dependencyDashboard": true,
   "dependencyDashboardTitle": "Renovate Dashboard",
-  "labels": ["renovatebot"]
+  "labels": ["renovatebot"],
+  "regexManagers": [
+    {
+      "fileMatch": ["(^|/|\\.)build.json"],
+      "matchStringsStrategy": "any",
+      "matchStrings": [
+         "\"amd64\": \"(?<depName>.*?):(?<currentValue>.*?)\"",
+          "\"aarch64\": \"(?<depName>.*?):(?<currentValue>.*?)\"",
+          "\"armv7\": \"(?<depName>.*?):(?<currentValue>.*?)\""
+      ],
+      "datasourceTemplate": "docker"
+    }
+  ]
 }
