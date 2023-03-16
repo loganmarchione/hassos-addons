@@ -8,7 +8,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 # Setup base system
 ARG \
   BUILD_ARCH \
-  NODE_EXPORTER_VERSION="1.4.0"
+  NODE_EXPORTER_VERSION="1.5.0"
 
 # Copy root filesystem
 COPY rootfs /
