@@ -18,3 +18,6 @@ configuration:
   cert_key:
     name: Private key
     description: This is a /path/to/privkey.pem
+  cmdline_extra_args:
+    name: Command line extra arguments
+    description: Extra arguments to pass to the "node_exporter" command at startup (see https://github.com/prometheus/node_exporter/#installation-and-usage for more information)

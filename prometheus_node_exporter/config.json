@@ -31,7 +31,8 @@
     "basic_auth_pass": "$2a$12$Azy3nrjebl.U17DLmpX57.cUUKzm/PX5thtAkf7xl/hUHSJrm4VkS",
     "enable_tls": false,
     "cert_file": "",
-    "cert_key": ""
+    "cert_key": "",
+    "cmdline_extra_args": ""
   },
   "schema": {
     "enable_basic_auth": "bool",
@@ -39,6 +40,7 @@
     "basic_auth_pass": "str",
     "enable_tls": "bool",
     "cert_file": "str",
-    "cert_key": "str"
+    "cert_key": "str",
+    "cmdline_extra_args": "str?"
   }
 }
