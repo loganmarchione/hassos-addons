@@ -9,10 +9,10 @@ The Prometheus [Node Exporter](https://github.com/prometheus/node_exporter) for 
 1. Add my [repository](https://github.com/loganmarchione/hassos-addons). The URL is `https://github.com/loganmarchione/hassos-addons`.
 1. Search for the "Prometheus Node Exporter" add-on in the Supervisor add-on store and install it.
 1. Disable "Protection mode" in the add-on panel.
-1. Optional - Check the `Configuration` tab.
+1. Optional - Check the `Configuration` tab of the add-on to make any changes you'd like.
 1. Start the add-on.
-1. Check the logs of the add-on to see if everything went well.
-1. To verify the metrics are available, visit `http://your_home_assistant_ip_address:9100/metrics` in your browser, or use curl `curl -X GET http://your_home_assistant_ip_address:9100/metrics`.
+1. Check the `Logs` tab of the add-on to see if everything went well.
+1. To verify the metrics are available, visit `http://your_home_assistant_ip_address:9100/metrics` in your browser, or use curl: `curl -X GET http://your_home_assistant_ip_address:9100/metrics`.
 
 ## Configuration
 
@@ -44,7 +44,11 @@ TLS is disabled by default. If you want to enable TLS:
 
 ⚠️ Note that the `cert_file` and `cert_key` need to be a `/path/to/fullchain.pem` and `/path/to/privkey.pem`, respectively (`/config` and `/ssl` are mapped to this add-on) ⚠️
 
-## Usage
+### Command-line arguments
+
+This option allows you to pass command-line arguments directly to Prometheus Node Exporter. This is particularly useful to adjust which [collectors](https://github.com/prometheus/node_exporter/#collectors) run. For example, to disable all collectors except the `cpu` collector, you can use this string: `--collector.disable-defaults --collector.cpu`.
+
+## Usage (in Prometheus server)
 
 Add the following to the `/etc/prometheus/prometheus.yml` config file on your Prometheus server:
 
@@ -67,12 +71,6 @@ node_uname_info{job="homeassistant"}
 ## Support
 
 - Tested on `amd64` and `aarch64` (Raspberry Pi 4B) platforms
-
-## Authors & contributors
-
-- [Logan Marchione](https://github.com/loganmarchione)
-- https://github.com/jaredacox
-- https://github.com/Quedale
 
 ## License
 
