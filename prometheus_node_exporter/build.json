@@ -1,7 +1,7 @@
 {
   "build_from": {
     "amd64": "ghcr.io/hassio-addons/base/amd64:14.0.0",
-    "aarch64": "ghcr.io/hassio-addons/base/aarch64:14.0.0",
+    "aarch64": "ghcr.io/hassio-addons/base/aarch64:14.1.0",
     "armv7": "ghcr.io/hassio-addons/base/armv7:14.0.0"
   }
 }
