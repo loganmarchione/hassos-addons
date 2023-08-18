@@ -1,12 +1,18 @@
 # Changelog
 
+## [0.7.0] - 2023-08-18
+
+- Upgraded Node Exporter to `1.6.1`
+- Upgraded base image from `ghcr.io/hassio-addons/base/<arch>:14.0.0` to `14.1.0`
+
 ## [0.6.0] - 2023-05-18
+
 - Upgraded base image from `ghcr.io/hassio-addons/base/<arch>:13.1.3` to `14.0.0`
 - Added support for Prometheus Node Exporter command-line arguments thanks to [@falzm](https://github.com/falzm) in https://github.com/loganmarchione/hassos-addons/pull/34
 
 ## [0.5.0] - 2023-03-16
 
-- Updated Node Exporter to 1.5.0
+- Upgraded Node Exporter to `1.5.0`
 - Upgraded base image from `ghcr.io/hassio-addons/base/<arch>:12.2.4` to `13.1.3`
 
 ## [0.4.0] - 2022-10-20
@@ -15,7 +21,7 @@
 
 ## [0.3.0] - 2022-09-26
 
-- Updated Node Exporter to 1.4.0
+- Upgraded Node Exporter to `1.4.0`
 
 ## [0.2.1] - 2022-08-05
 
@@ -51,7 +57,7 @@
 
 ## [0.0.4] - 2021-12-29
 
-- Updated Node Exporter to 1.3.1
+- Upgraded Node Exporter to `1.3.1`
 
 ## [0.0.3] - 2021-12-12
 
