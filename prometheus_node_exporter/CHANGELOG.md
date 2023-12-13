@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.8.0] - 2023-12-13
+
+- Upgraded Node Exporter to `1.7.0`
+- Upgraded base image from `ghcr.io/hassio-addons/base/<arch>:14.1.0` to `15.0.1`
+
 ## [0.7.0] - 2023-08-18
 
 - Upgraded Node Exporter to `1.6.1`

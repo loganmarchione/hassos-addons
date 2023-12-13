@@ -25,6 +25,10 @@ chown root:prometheus $web_config_file
 # Poor man's debugger: check permissions on web config file
 #ls -la $web_config_file
 
+bashio::log.info "Add-on info - name:     $(bashio::addon.name)"
+bashio::log.info "Add-on info - version:  $(bashio::addon.version)"
+bashio::log.info "Add-on info - hostname: $(bashio::addon.hostname)"
+bashio::log.info "Add-on info - DNS name: $(bashio::addon.dns)"
 bashio::log.info "Checking configuration options..."
 
 #####################
