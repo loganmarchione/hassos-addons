@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.8.1] - 2024-01-11
+
+- Published pre-built image to GHCR thanks to [@wozz](https://github.com/wozz) in https://github.com/loganmarchione/hassos-addons/pull/47
+
 ## [0.8.0] - 2023-12-13
 
 - Upgraded Node Exporter to `1.7.0`
