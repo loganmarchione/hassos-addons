@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.8.2] - 2024-01-16
+
+- Upgraded base image from `ghcr.io/hassio-addons/base/<arch>:15.0.1` to `15.0.4`
+
 ## [0.8.1] - 2024-01-11
 
 - Published pre-built image to GHCR thanks to [@wozz](https://github.com/wozz) in https://github.com/loganmarchione/hassos-addons/pull/47
