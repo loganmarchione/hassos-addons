@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.9.0] - 2024-05-13
+
+- Upgraded Node Exporter to `1.8.0` thanks to [@b-reich](https://github.com/b-reich) in https://github.com/loganmarchione/hassos-addons/pull/49
+
 ## [0.8.2] - 2024-01-16
 
 - Upgraded base image from `ghcr.io/hassio-addons/base/<arch>:15.0.1` to `15.0.4`
