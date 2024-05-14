@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.9.1] - 2024-05-14
+
+- Upgraded base image from `ghcr.io/hassio-addons/base/<arch>:15.0.4` to `15.0.8`
+- Added [CONTRIBUTING.md](https://github.com/loganmarchione/hassos-addons/blob/main/prometheus_node_exporter/CONTRIBUTING.md)
+
 ## [0.9.0] - 2024-05-13
 
 - Upgraded Node Exporter to `1.8.0` thanks to [@b-reich](https://github.com/b-reich) in https://github.com/loganmarchione/hassos-addons/pull/49
