@@ -48,9 +48,12 @@ if bashio::config.true 'enable_basic_auth'; then
   basic_auth_user="$(bashio::config 'basic_auth_user')"
   basic_auth_pass="$(bashio::config 'basic_auth_pass')"
 
+  # bcrypt the password
+  hashed_password=$(htpasswd -bnBC 12 "" "$basic_auth_pass" | tr -d ':\n')
+
   # Start echoing lines out to web config file (YAML is space-sensitive so I'm lazily not using a heredoc)
   echo "basic_auth_users:" >> $web_config_file
-  echo "    $basic_auth_user: $basic_auth_pass" >> $web_config_file
+  echo "    $basic_auth_user: $hashed_password" >> $web_config_file
 
 fi
 

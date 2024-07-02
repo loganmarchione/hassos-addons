@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.0.0] - 2024-07-01
+
+⚠️ BREAKING CHANGES ⚠️
+
+- Upgraded Node Exporter to `1.8.1`
+- Upgraded base image from `ghcr.io/hassio-addons/base/<arch>:15.0.8` to `16.1.2`
+- Removes the default username/password
+- Now requires a plaintext password instead of a bcrypt string (the container will bcrypt the password for you)
+
 ## [0.9.1] - 2024-05-14
 
 - Upgraded base image from `ghcr.io/hassio-addons/base/<arch>:15.0.4` to `15.0.8`

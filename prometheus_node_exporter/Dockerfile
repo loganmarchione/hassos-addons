@@ -8,14 +8,14 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 # Setup base system
 ARG \
   BUILD_ARCH \
-  NODE_EXPORTER_VERSION="1.8.0"
+  NODE_EXPORTER_VERSION="1.8.1"
 
 # Copy root filesystem
 COPY rootfs /
 
 # hadolint ignore=DL3003,DL3018
 RUN \
-    apk add --no-cache --update tar \
+    apk add --no-cache --update apache2-utils tar \
     && ARCH="${BUILD_ARCH}" \
     && if [ "${BUILD_ARCH}" = "aarch64" ]; then ARCH="arm64"; fi \
     && curl -J -L -o /tmp/node_exporter.tar.gz \

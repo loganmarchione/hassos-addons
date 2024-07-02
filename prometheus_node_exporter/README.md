@@ -25,16 +25,6 @@ By default, Prometheus Node Exporter listens on TCP port 9100.
 1. set `enable_basic_auth` to true
 1. enter the `basic_auth_user` and `basic_auth_pass`
 
-⚠️ Note that the `basic_auth_pass` needs to be a [bcrypt password hash](https://prometheus.io/docs/guides/basic-auth/)! ⚠️
-
-The default credentials are below ⚠️ PLEASE CHANGE THEM ⚠️:
-
-```
-Username            prom
-Password (plain)    prometheus123@
-Password (bcrypt)   $2a$12$Azy3nrjebl.U17DLmpX57.cUUKzm/PX5thtAkf7xl/hUHSJrm4VkS
-```
-
 ### TLS
 
 TLS is disabled by default. If you want to enable TLS:
@@ -60,6 +50,9 @@ scrape_configs:
   - job_name: 'homeassistant'
     static_configs:
     - targets: ['your_home_assistant_ip_address:9100']
+    basic_auth:
+      username: username_goes_here
+      password: password_goes_here
 ```
 
 The following Prometheus query should return data:
@@ -84,7 +77,7 @@ WIP
 ## TODO
 
 - [x] Add HTTP Basic Auth
-- [ ] Add abilty to enter plain-text password instead of bcyrpt-ed hash
+- [x] Add abilty to enter plain-text password instead of bcyrpt-ed hash
 - [x] Add TLS
 - [x] Per [this comment](https://community.home-assistant.io/t/hello-world-example-addon-from-developer-docs-stopped-working-s6-overlay-issue/421486/7), setup container images on a registry (DockerHub or GitHub) so that users aren't building the container with each install (would have prevented [this issue](https://github.com/loganmarchione/hassos-addons/issues/2))
 - [x] Investigate CI/CD for this repo, specifically [this](https://github.com/home-assistant/actions) and [this](https://github.com/hassio-addons/addon-glances/blob/main/.github/workflows/ci.yaml) as an example
