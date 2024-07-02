@@ -8,6 +8,7 @@
 - Upgraded base image from `ghcr.io/hassio-addons/base/<arch>:15.0.8` to `16.1.2`
 - Removes the default username/password
 - Now requires a plaintext password instead of a bcrypt string (the container will bcrypt the password for you)
+  - If you're upgrading from `0.9.1` or any earlier version, you will **NEED** to go to the "Configuration" tab and enter the plaintext version of your password (if you leave the bcrypt hash in the password field, the container will try to hash your already-hashed password)
 
 ## [0.9.1] - 2024-05-14
 
