@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.0.1] - 2024-09-011
+## [1.0.1] - 2024-09-11
 
 - Upgraded base image from `ghcr.io/hassio-addons/base/<arch>:16.1.2` to `16.3.0`
 
