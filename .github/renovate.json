@@ -1,20 +1,25 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:base",
+    "config:recommended",
     "schedule:nonOfficeHours"
   ],
   "dependencyDashboard": true,
   "dependencyDashboardTitle": "Renovate Dashboard",
-  "labels": ["renovatebot"],
-  "regexManagers": [
+  "labels": [
+    "renovatebot"
+  ],
+  "customManagers": [
     {
-      "fileMatch": ["(^|/|\\.)build.json"],
+      "customType": "regex",
+      "fileMatch": [
+        "(^|/|\\.)build.json"
+      ],
       "matchStringsStrategy": "any",
       "matchStrings": [
-         "\"amd64\": \"(?<depName>.*?):(?<currentValue>.*?)\"",
-          "\"aarch64\": \"(?<depName>.*?):(?<currentValue>.*?)\"",
-          "\"armv7\": \"(?<depName>.*?):(?<currentValue>.*?)\""
+        "\"amd64\": \"(?<depName>.*?):(?<currentValue>.*?)\"",
+        "\"aarch64\": \"(?<depName>.*?):(?<currentValue>.*?)\"",
+        "\"armv7\": \"(?<depName>.*?):(?<currentValue>.*?)\""
       ],
       "datasourceTemplate": "docker"
     }
