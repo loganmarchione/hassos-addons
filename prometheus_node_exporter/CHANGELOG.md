@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.0.4] - 2025-03-02
+
+- Upgraded Node Exporter to `1.9.0`
+- Upgraded base image from `ghcr.io/hassio-addons/base/<arch>:17.1.0` to `17.2.1`
+
 ## [1.0.3] - 2025-01-20
 
 - Upgraded base image from `ghcr.io/hassio-addons/base/<arch>:16.3.5` to `17.1.0`
