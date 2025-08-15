@@ -22,7 +22,7 @@ jobs:
 
     steps:
       - name: Check out the codebase
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Find add-on directories
         id: addons
@@ -40,7 +40,7 @@ jobs:
 
     steps:
       - name: Check out the codebase
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Run Home Assistant Add-on Lint
         uses: frenck/action-addon-linter@v2
