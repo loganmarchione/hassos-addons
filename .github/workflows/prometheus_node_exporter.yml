@@ -2,7 +2,7 @@ name: "Publish Prometheus Node Exporter"
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   publish:
