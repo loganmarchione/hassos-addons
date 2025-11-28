@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.1.0] - 2025-11-28
+
+- Upgraded Node Exporter to `1.10.2`
+- Upgraded base image from `ghcr.io/hassio-addons/base/<arch>:18.1.1` to `18.2.1`
+- This will probably be my last release with support for `armv7`, since the base image for [19.0.0 drops support](https://github.com/hassio-addons/addon-base/releases/tag/v19.0.0) for `armhf`, `armv7`, and `i386`
+
 ## [1.0.6] - 2025-09-19
 
 - Upgraded base image from `ghcr.io/hassio-addons/base/<arch>:18.0.0` to `18.1.1`
