@@ -12,8 +12,8 @@
   "customManagers": [
     {
       "customType": "regex",
-      "fileMatch": [
-        "(^|/|\\.)build.json"
+      "managerFilePatterns": [
+        "/(^|/|\\.)build.json/"
       ],
       "matchStringsStrategy": "any",
       "matchStrings": [
