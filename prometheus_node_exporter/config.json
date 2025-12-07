@@ -5,7 +5,7 @@
   "description": "Prometheus node exporter for hardware and OS metrics",
   "url": "https://github.com/loganmarchione/hassos-addons/tree/main/prometheus_node_exporter",
   "image": "ghcr.io/loganmarchione/hassos-addons/prometheusnodeexporter-{arch}",
-  "arch": ["amd64", "aarch64", "armv7"],
+  "arch": ["amd64", "aarch64"],
   "startup": "services",
   "init": false,
   "webui": "[PROTO:enable_tls]://[HOST]:[PORT:9100]",

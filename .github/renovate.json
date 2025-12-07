@@ -18,8 +18,7 @@
       "matchStringsStrategy": "any",
       "matchStrings": [
         "\"amd64\": \"(?<depName>.*?):(?<currentValue>.*?)\"",
-        "\"aarch64\": \"(?<depName>.*?):(?<currentValue>.*?)\"",
-        "\"armv7\": \"(?<depName>.*?):(?<currentValue>.*?)\""
+        "\"aarch64\": \"(?<depName>.*?):(?<currentValue>.*?)\""
       ],
       "datasourceTemplate": "docker"
     }
