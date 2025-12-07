@@ -26,10 +26,10 @@ jobs:
           configpath: prometheus_node_exporter/config.json
       - name: Publish
         if: ${{ steps.check.outputs.status == '404' }}
-        uses: home-assistant/builder@2025.09.0
+        uses: home-assistant/builder@2025.11.0
         with:
           args: |
-            --aarch64 --amd64 --armv7 \
+            --aarch64 --amd64 \
             --target prometheus_node_exporter \
             --docker-hub ghcr.io/loganmarchione/hassos-addons \
             --image prometheusnodeexporter-{arch}
