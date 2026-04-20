@@ -19,6 +19,7 @@ RUN \
     if [ -z "${TARGETARCH}" ]; then \
         echo "TARGETARCH is not set, please use Docker BuildKit for the build." && exit 1; \
     fi \
+    && apk add --no-cache --update apache2-utils \
     && case "${TARGETARCH}" in \
         amd64) NODE_EXPORTER_ARCH="amd64" ;; \
         arm64) NODE_EXPORTER_ARCH="aarch64" ;; \
