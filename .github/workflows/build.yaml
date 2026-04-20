@@ -37,16 +37,16 @@ jobs:
       - name: Normalize app information
         id: normalize
         run: |
-          image="${{ steps.info.outputs.image }}"
+          image=${{ steps.info.outputs.image }}
           echo "image_name=${image##*/}" >> "$GITHUB_OUTPUT"
           echo "registry_prefix=${image%/*}" >> "$GITHUB_OUTPUT"
-          version="${{ steps.info.outputs.version }}"
+          version=${{ steps.info.outputs.version }}
           echo "version=${version}" >> "$GITHUB_OUTPUT"
-          name="${{ steps.info.outputs.name }}"
+          name=${{ steps.info.outputs.name }}
           echo "name=${name}" >> "$GITHUB_OUTPUT"
-          description="${{ steps.info.outputs.description }}"
+          description=${{ steps.info.outputs.description }}
           echo "description=${description}" >> "$GITHUB_OUTPUT"
-          url="${{ steps.info.outputs.url }}"
+          url=${{ steps.info.outputs.url }}
           if [[ -n "$url" && "$url" != "null" ]]; then
             echo "url=${url}" >> "$GITHUB_OUTPUT"
           fi
