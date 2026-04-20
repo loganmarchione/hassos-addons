@@ -21,8 +21,8 @@ RUN \
     fi \
     && apk add --no-cache --update apache2-utils \
     && case "${TARGETARCH}" in \
-        amd64) NODE_EXPORTER_ARCH="amd64" ;; \
-        arm64) NODE_EXPORTER_ARCH="aarch64" ;; \
+        amd64) export NODE_EXPORTER_ARCH="amd64" ;; \
+        arm64) export NODE_EXPORTER_ARCH="aarch64" ;; \
         *) echo "Unsupported TARGETARCH: ${TARGETARCH}" && exit 1 ;; \
     esac \
     && mkdir -p /tmp/node_exporter \
