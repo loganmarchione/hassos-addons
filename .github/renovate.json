@@ -9,5 +9,15 @@
   "dependencyDashboardTitle": "Renovate Dashboard",
   "labels": [
     "renovatebot"
+  ],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "fileMatch": ["(^|/)Dockerfile$"],
+      "matchStrings": [
+        "#\\s*renovate:\\s*datasource=(?<datasource>\\S+)\\s+depName=(?<depName>\\S+)\\n(?:ARG|ENV)\\s+\\w+=[\"']?(?<currentValue>[\\w.-]+)[\"']?"
+      ],
+      "extractVersionTemplate": "^v?(?<version>.+)$"
+    }
   ]
 }

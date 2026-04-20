@@ -11,6 +11,7 @@ LABEL \
   org.opencontainers.image.source="https://github.com/loganmarchione/hassos-addons/tree/main/prometheus_node_exporter"
 
 # Setup base system
+# renovate: datasource=github-releases depName=prometheus/node_exporter
 ARG NODE_EXPORTER_VERSION="1.11.1"
 ARG TARGETARCH
 
