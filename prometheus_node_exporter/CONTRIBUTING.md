@@ -12,22 +12,12 @@ Currently, this repo pushes a tagged image from `main` to the [packages](https:/
 
 I'm still working this out, but am doing testing based on [this page](https://developers.home-assistant.io/docs/add-ons/testing).
 
-After making your changes, run the command below from the git root directory (i.e., `hassos-addons`) to ensure that the add-on builds successfully (substitute `amd64` with `armhf`, `aarch64`, or `i386` based on your system).
+After making your changes, run the command below from the git root directory (i.e., `hassos-addons`) to ensure that the add-on builds successfully.
 
 ```
-docker run \
-  --rm \
-  -it \
-  --name builder \
-  --privileged \
-  -v ./prometheus_node_exporter:/data \
-  -v /var/run/docker.sock:/var/run/docker.sock:ro \
-  ghcr.io/home-assistant/amd64-builder \
-  -t /data \
-  --amd64 \
-  --test \
-  -i test-prometheus-node-exporter \
-  -d local
+docker build \
+  -t local/my-test-app \
+  prometheus_node_exporter
 ```
 
 To test that the add-on actually runs, I've been using my personal instance of Home Assistant 🤷‍♂️
