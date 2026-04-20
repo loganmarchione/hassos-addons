@@ -9,19 +9,5 @@
   "dependencyDashboardTitle": "Renovate Dashboard",
   "labels": [
     "renovatebot"
-  ],
-  "customManagers": [
-    {
-      "customType": "regex",
-      "managerFilePatterns": [
-        "/(^|/|\\.)build.json/"
-      ],
-      "matchStringsStrategy": "any",
-      "matchStrings": [
-        "\"amd64\": \"(?<depName>.*?):(?<currentValue>.*?)\"",
-        "\"aarch64\": \"(?<depName>.*?):(?<currentValue>.*?)\""
-      ],
-      "datasourceTemplate": "docker"
-    }
   ]
 }
