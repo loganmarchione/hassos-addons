@@ -14,17 +14,18 @@ LABEL \
 ARG NODE_EXPORTER_VERSION="1.11.1"
 ARG TARGETARCH
 
-# hadolint ignore=DL3018
-RUN apk add --no-cache --update apache2-utils
-
-# hadolint ignore=DL3003
-RUN set -eux; \
+# hadolint ignore=DL3003,DL3018
+RUN \
     if [ -z "${TARGETARCH}" ]; then \
-        echo "TARGETARCH is not set, please use Docker BuildKit for the build."; exit 1; \
-    fi; \
-    NODE_EXPORTER_ARCH="${TARGETARCH}"; \
-    if [ "${TARGETARCH}" = "arm64" ]; then NODE_EXPORTER_ARCH="aarch64"; fi; \
-    mkdir -p /tmp/node_exporter \
+        echo "TARGETARCH is not set, please use Docker BuildKit for the build." && exit 1; \
+    fi \
+    && apk add --no-cache --update apache2-utils \
+    && case "${TARGETARCH}" in \
+        amd64) NODE_EXPORTER_ARCH="amd64" ;; \
+        arm64) NODE_EXPORTER_ARCH="arm64" ;; \
+        *) echo "Unsupported TARGETARCH: ${TARGETARCH}" && exit 1 ;; \
+    esac \
+    && mkdir -p /tmp/node_exporter \
     && curl -sSLf -o /tmp/node_exporter/node_exporter.tar.gz \
        "https://github.com/prometheus/node_exporter/releases/download/v${NODE_EXPORTER_VERSION}/node_exporter-${NODE_EXPORTER_VERSION}.linux-${NODE_EXPORTER_ARCH}.tar.gz" \
     && cd /tmp/node_exporter \
