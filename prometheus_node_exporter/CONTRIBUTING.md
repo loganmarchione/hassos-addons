@@ -12,11 +12,11 @@ Currently, this repo pushes a tagged image from `main` to the [packages](https:/
 
 I'm still working this out, but am doing testing based on [this page](https://developers.home-assistant.io/docs/add-ons/testing).
 
-After making your changes, run the command below from the git root directory (i.e., `hassos-addons`) to ensure that the add-on builds successfully.
+After making your changes, run the command below from the git repo root directory (i.e., `hassos-addons`) to ensure that the add-on builds successfully.
 
 ```
 docker build \
-  -t local/my-test-app \
+  -t local/prometheus_node_exporter \
   prometheus_node_exporter
 ```
 
