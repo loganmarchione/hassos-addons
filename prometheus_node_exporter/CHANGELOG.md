@@ -1,6 +1,15 @@
 # Changelog
 
-## [2.0.0] - 2025-12.07
+## [3.0.0] - 2026-04-19
+
+⚠️ BREAKING CHANGES ⚠️
+
+- Upgraded Node Exporter to `1.11.1`
+- Upgraded base image from `ghcr.io/hassio-addons/base/<arch>:19.0.0` to `ghcr.io/home-assistant/base:3.22`
+- Migrated app build to Docker BuildKit as per [this page](https://developers.home-assistant.io/blog/2026/04/02/builder-migration)
+  - I'm not sure if this will show as an upgrade from `2.0.0` to `3.0.0` in user's Home Assistant instances since the URL to the image is changing
+
+## [2.0.0] - 2025-12-07
 
 ⚠️ BREAKING CHANGES ⚠️
 
