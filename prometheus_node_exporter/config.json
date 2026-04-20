@@ -4,7 +4,7 @@
   "slug": "prometheus_node_exporter",
   "description": "Prometheus node exporter for hardware and OS metrics",
   "url": "https://github.com/loganmarchione/hassos-addons/tree/main/prometheus_node_exporter",
-  "image": "ghcr.io/loganmarchione/hassos-addons/prometheusnodeexporter-{arch}",
+  "image": "ghcr.io/loganmarchione/hassos-addons/prometheusnodeexporter",
   "arch": ["amd64", "aarch64"],
   "startup": "services",
   "init": false,
