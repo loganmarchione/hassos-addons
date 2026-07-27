@@ -21,7 +21,7 @@ jobs:
 
     steps:
       - name: Check out the repository
-        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
 
       - name: Find add-on directories
         id: addons
@@ -39,7 +39,7 @@ jobs:
 
     steps:
       - name: Check out the repository
-        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
 
       - name: Run Home Assistant Add-on Lint
         uses: frenck/action-addon-linter@f995494fd84fae6310d23617e66d0e37de4f14eb # v2
