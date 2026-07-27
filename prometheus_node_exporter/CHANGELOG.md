@@ -1,5 +1,9 @@
 # Changelog
 
+## [3.1.0] - 2026-07-27
+
+- No user-facing changes. Instead, start explicitly tagging releases on GitHub.
+
 ## [3.0.0] - 2026-04-19
 
 ⚠️ BREAKING CHANGES ⚠️
