@@ -1,5 +1,11 @@
 # Changelog
 
+## [3.2.0] - 2026-07-27
+
+- Pin GitHub Actions to digests instead of versions
+- Upgraded Node Exporter to `1.12.1`
+- Upgraded base image to `3.24`
+
 ## [3.1.0] - 2026-07-27
 
 - No user-facing changes. Instead, start explicitly tagging releases on GitHub.
