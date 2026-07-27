@@ -2,8 +2,8 @@ name: Build
 
 on:
   push:
-    branches:
-      - main
+    tags:
+      - "*/v*"
 
 permissions:
   contents: read
@@ -23,16 +23,45 @@ jobs:
       url: ${{ steps.normalize.outputs.url }}
       registry_prefix: ${{ steps.normalize.outputs.registry_prefix }}
       version: ${{ steps.normalize.outputs.version }}
+      addon_path: ${{ steps.parse.outputs.addon_path }}
 
     steps:
       - name: Check out the repository
         uses: actions/checkout@v6
 
+      - name: Parse tag
+        id: parse
+        run: |
+          tag="${GITHUB_REF#refs/tags/}"   # e.g. prometheus_node_exporter/v3.1.0
+          addon="${tag%%/*}"               # prometheus_node_exporter
+          version="${tag#*/}"              # v3.1.0
+          version="${version#v}"           # 3.1.0
+          if [[ -z "$addon" || "$addon" == "$tag" ]]; then
+            echo "::error::Tag '${tag}' is not in the expected '<addon>/v<version>' format."
+            exit 1
+          fi
+          if [[ ! -f "./${addon}/config.json" ]]; then
+            echo "::error::No config.json found for add-on '${addon}' (tag '${tag}')."
+            exit 1
+          fi
+          echo "addon=${addon}" >> "$GITHUB_OUTPUT"
+          echo "addon_path=./${addon}" >> "$GITHUB_OUTPUT"
+          echo "tag_version=${version}" >> "$GITHUB_OUTPUT"
+
       - name: Get app information
         id: info
         uses: home-assistant/actions/helpers/info@master
         with:
-          path: ./prometheus_node_exporter
+          path: ${{ steps.parse.outputs.addon_path }}
+
+      - name: Verify tag matches config.json version
+        run: |
+          config_version="${{ steps.info.outputs.version }}"
+          tag_version="${{ steps.parse.outputs.tag_version }}"
+          if [[ "$config_version" != "$tag_version" ]]; then
+            echo "::error::config.json version (${config_version}) does not match tag version (${tag_version})."
+            exit 1
+          fi
 
       - name: Normalize app information
         id: normalize
@@ -85,7 +114,7 @@ jobs:
         with:
           arch: ${{ matrix.arch }}
           container-registry-password: ${{ secrets.GITHUB_TOKEN }}
-          context: ./prometheus_node_exporter
+          context: ${{ needs.prepare.outputs.addon_path }}
           image: ${{ matrix.image }}
           image-tags: |
             ${{ needs.prepare.outputs.version }}
