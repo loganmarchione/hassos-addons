@@ -21,11 +21,11 @@ jobs:
 
     steps:
       - name: Check out the repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
 
       - name: Find add-on directories
         id: addons
-        uses: home-assistant/actions/helpers/find-addons@master
+        uses: home-assistant/actions/helpers/find-addons@e3fb68ebda13d88a0d695082f471ba2c83d025fb # master
 
   lint:
     name: Lint add-on ${{ matrix.path }}
@@ -39,9 +39,9 @@ jobs:
 
     steps:
       - name: Check out the repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
 
       - name: Run Home Assistant Add-on Lint
-        uses: frenck/action-addon-linter@v2
+        uses: frenck/action-addon-linter@f995494fd84fae6310d23617e66d0e37de4f14eb # v2
         with:
           path: "./${{ matrix.path }}"
