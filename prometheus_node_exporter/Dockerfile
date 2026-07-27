@@ -12,7 +12,7 @@ LABEL \
 
 # Setup base system
 # renovate: datasource=github-releases depName=prometheus/node_exporter
-ARG NODE_EXPORTER_VERSION="1.11.1"
+ARG NODE_EXPORTER_VERSION="1.12.1"
 ARG TARGETARCH
 
 # hadolint ignore=DL3003,DL3018
