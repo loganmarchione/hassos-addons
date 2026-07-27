@@ -153,4 +153,4 @@
 
 ## Note
 
-I'm not making numbered GitHub releases/tags, since this is still a beta project. These release numbers are purely made up.
+I only started making tagged releases with v3.1.0. The version numbers before this were entirely made up, since this was a beta project.
