@@ -1,6 +1,6 @@
 {
   "name": "Prometheus Node Exporter",
-  "version": "3.2.0",
+  "version": "3.3.0",
   "slug": "prometheus_node_exporter",
   "description": "Prometheus node exporter for hardware and OS metrics",
   "url": "https://github.com/loganmarchione/hassos-addons/tree/main/prometheus_node_exporter",
@@ -33,7 +33,10 @@
     "enable_tls": false,
     "cert_file": "",
     "cert_key": "",
-    "cmdline_extra_args": ""
+    "cmdline_extra_args": "",
+    "enable_collector_scripts": false,
+    "collector_scripts": [],
+    "collector_script_file_dir": "/var/spool/collector-textfiles"
   },
   "schema": {
     "enable_basic_auth": "bool",
@@ -42,6 +45,9 @@
     "enable_tls": "bool",
     "cert_file": "str",
     "cert_key": "str",
-    "cmdline_extra_args": "str?"
+    "cmdline_extra_args": "str?",
+    "enable_collector_scripts": "bool",
+    "collector_scripts": ["str"],
+    "collector_script_file_dir": "str?"
   }
 }
