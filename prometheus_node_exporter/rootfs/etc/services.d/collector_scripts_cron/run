@@ -1,0 +1,10 @@
+#!/usr/bin/env bashio
+# ==============================================================================
+# Home Assistant Community Add-on: Prometheus Node Exporter
+# Runs the Collector Scripts
+# ==============================================================================
+bashio::log.info "Starting cron for collector scripts..."
+
+# Start cron daemon on foreground
+exec /usr/sbin/crond -f -d 5 -c /etc/cron.d
+
