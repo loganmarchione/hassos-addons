@@ -50,7 +50,7 @@ jobs:
 
       - name: Get app information
         id: info
-        uses: home-assistant/actions/helpers/info@50baf3a307f87100cf550d4ae127746595030d5d # master
+        uses: home-assistant/actions/helpers/info@86d4564712fa02543c808e3a693dd04f9d3f8361 # master
         with:
           path: ${{ steps.parse.outputs.addon_path }}
 
