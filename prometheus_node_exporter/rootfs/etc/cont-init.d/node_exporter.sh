@@ -80,3 +80,42 @@ if bashio::config.true 'enable_tls'; then
   echo "    key_file: $cert_key" >> $web_config_file
 
 fi
+
+#####################
+# Collector scripts
+#####################
+
+if bashio::config.true 'enable_collector_scripts'; then
+  bashio::log.info "Collector scripts are enabled"
+  spool_dir=$(bashio::config 'collector_script_file_dir' '/tmp')
+  mkdir -p $spool_dir
+  chmod 750 $spool_dir
+  chown root:prometheus $spool_dir
+
+  # Clear existing scripts
+  scripts_bin_dir="/usr/local/bin/collector_scripts"
+  scripts_cron_dir="/etc/periodic/collector_scripts"
+  rm -rf $scripts_cron_dir/* $scripts_bin_dir 2>/dev/null
+  mkdir -p $scripts_bin_dir $scripts_cron_dir
+  chmod 750 $scripts_bin_dir $scripts_cron_dir
+  chown root:prometheus $scripts_bin_dir
+
+  echo $(bashio::config 'collector_scripts' '') | while read -d ' ' collector; do
+    collector_script="${web_config_dir}/${collector}"
+    if [ ! -f "${collector_script}" ]; then
+      bashio::log.warning "Collector script '${collector_script}' not found!"
+    else
+      bashio::log.info "Adding collector script '${collector_script}'"
+      # Copy the collector script from users' config folder
+      cp $collector_script $scripts_bin_dir/$collector
+      # Create cron entry for script
+      collector_cron="${scripts_cron_dir}/${collector}"
+      sh -c "cat > ${collector_cron}" <<EOT
+#!/bin/sh
+${scripts_bin_dir}/${collector} 1>${spool_dir}/${collector}.prom
+EOT
+      chmod 750 $collector_cron $scripts_bin_dir/${collector}
+    fi
+  done
+fi
+

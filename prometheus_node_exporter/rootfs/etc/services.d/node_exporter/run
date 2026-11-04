@@ -5,5 +5,11 @@
 # ==============================================================================
 bashio::log.info "Starting Prometheus Node Exporter..."
 
+cmdline_args="--web.config.file=/config/prometheus_node_exporter/node_exporter_web.yml"
+
+if bashio::config.true 'enable_collector_scripts'; then
+    cmdline_args="${cmdline_args} --collector.textfile.directory=$(bashio::config 'collector_script_file_dir' '')"
+fi
+
 # Run Prometheus
-exec /usr/local/bin/node_exporter --web.config.file=/config/prometheus_node_exporter/node_exporter_web.yml $(bashio::config 'cmdline_extra_args' '')
+exec /usr/local/bin/node_exporter ${cmdline_args} $(bashio::config 'cmdline_extra_args' '')

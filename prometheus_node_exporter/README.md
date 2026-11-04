@@ -39,6 +39,11 @@ TLS is disabled by default. If you want to enable TLS:
 
 This option allows you to pass command-line arguments directly to Prometheus Node Exporter. This is particularly useful to adjust which [collectors](https://github.com/prometheus/node_exporter/#collectors) run. For example, to disable all collectors except the `cpu` collector, you can use this string: `--collector.disable-defaults --collector.cpu`.
 
+### Collector scripts
+
+Optionally, [textfile collector scripts](https://github.com/prometheus-community/node-exporter-textfile-collector-scripts) can be added, to export batch job statistics. Set `enable_collector_scripts` to `true`, and specifying their names in `collector_scripts`. These scripts are copied from `/config/prometheus_node_exporter` directory of your hass instance on startup, and will be executed every 5 minutes as crond tasks.
+
+
 ## Usage (in Prometheus server)
 
 Add the following to the `/etc/prometheus/prometheus.yml` config file on your Prometheus server:
