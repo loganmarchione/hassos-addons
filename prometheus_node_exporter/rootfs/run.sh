@@ -12,5 +12,10 @@
 # ==============================================================================
 /etc/cont-init.d/node_exporter.sh
 
+# FIXME: move into S6 service overlay
+if bashio::config.true 'enable_collector_scripts'; then
+    /etc/services.d/collector_scripts_cron/run &
+fi
+
 # Start Prometheus Node Exporter
 exec /etc/services.d/node_exporter/run

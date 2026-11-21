@@ -1,0 +1,3 @@
+# execute prometheus collector scripts
+# min	hour	day	month	weekday	command
+*/5	*	*	*	*	run-parts /etc/periodic/collector_scripts

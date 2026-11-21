@@ -1,5 +1,9 @@
 # Changelog
 
+## [3.3.0] - 2026-09-20
+
+- Added collector script support
+
 ## [3.2.0] - 2026-07-27
 
 - Pin GitHub Actions to digests instead of versions
