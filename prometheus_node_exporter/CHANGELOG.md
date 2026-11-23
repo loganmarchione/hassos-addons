@@ -1,5 +1,17 @@
 # Changelog
 
+## [4.0.0] - 2026-11-22
+
+⚠️ BREAKING CHANGES ⚠️
+
+- Replaced the deprecated `config` folder mapping with `app_config`.
+  - This add-on no longer has access to your Home Assistant config folder. Instead, it gets its own config folder, which is included in the add-on's backups.
+  - Inside the add-on, this folder is still mounted at `/config`. From other add-ons (e.g., File editor, Samba, or Terminal & SSH), it is at `/app_configs/<hash>_prometheus_node_exporter` (older versions of those add-ons show it as `/addon_configs/...`).
+  - If you enabled TLS and your `cert_file`/`cert_key` point to files in your Home Assistant config folder (e.g., `/config/...`), the add-on will fail to start after upgrading. Move your certificates to `/ssl` (recommended) or to the add-on's config folder above, then update `cert_file`/`cert_key`. Certificates already in `/ssl` are not affected.
+  - The web config file (`node_exporter_web.yml`) is now created in the add-on's config folder. After upgrading, you can safely delete the old `/homeassistant/prometheus_node_exporter/` folder (in Samba, it's `prometheus_node_exporter` in the `config` share). It only contains the old `node_exporter_web.yml`, which is no longer used and contains the bcrypt hash of your HTTP Basic Auth password.
+  - This version requires Home Assistant Supervisor `2026.07.1` or newer, since that is the first version that supports `app_config`. Older Supervisors will skip the mapping, so the add-on's config folder will not be visible to you or included in backups. Check your version under Settings > About, and update the Supervisor before upgrading this add-on.
+- Added `breaking_versions`, so Home Assistant won't auto-update to this version. You'll need to update manually after reading this changelog.
+
 ## [3.2.0] - 2026-07-27
 
 - Pin GitHub Actions to digests instead of versions

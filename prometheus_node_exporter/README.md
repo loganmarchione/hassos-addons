@@ -33,7 +33,7 @@ TLS is disabled by default. If you want to enable TLS:
 1. set `enable_tls` to true
 1. enter the `cert_file` and `cert_key`
 
-⚠️ Note that the `cert_file` and `cert_key` need to be a `/path/to/fullchain.pem` and `/path/to/privkey.pem`, respectively (`/config` and `/ssl` are mapped to this add-on) ⚠️
+⚠️ Note that the `cert_file` and `cert_key` need to be a `/path/to/fullchain.pem` and `/path/to/privkey.pem`, respectively. Only `/ssl` and this add-on's own config folder are mapped to this add-on. Your Home Assistant config folder is **not** mapped. Inside the add-on, its config folder is `/config`. From other add-ons (e.g., File editor, Samba, or Terminal & SSH), it is `/app_configs/<hash>_prometheus_node_exporter` ⚠️
 
 ### Command-line arguments
 

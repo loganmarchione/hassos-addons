@@ -1,12 +1,13 @@
 {
   "name": "Prometheus Node Exporter",
-  "version": "3.2.0",
+  "version": "4.0.0",
   "slug": "prometheus_node_exporter",
   "description": "Prometheus node exporter for hardware and OS metrics",
   "url": "https://github.com/loganmarchione/hassos-addons/tree/main/prometheus_node_exporter",
   "image": "ghcr.io/loganmarchione/hassos-addons/prometheusnodeexporter",
   "arch": ["amd64", "aarch64"],
   "startup": "services",
+  "breaking_versions": ["4.0.0"],
   "init": false,
   "webui": "[PROTO:enable_tls]://[HOST]:[PORT:9100]",
   "ports": {
@@ -16,7 +17,7 @@
     "9100/tcp": "Default node exporter port and web interface"
   },
   "map": [
-    "config:rw",
+    "app_config:rw",
     "ssl"
   ],
   "hassio_api": true,
